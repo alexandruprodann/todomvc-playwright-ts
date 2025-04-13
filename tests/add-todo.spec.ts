@@ -6,14 +6,6 @@ test.beforeEach(async ({ page }) => {
 	await page.goto('https://todomvc.com/examples/react/dist/');
 });
 
-// const TODO_ITEMS: string[] = [
-// 	'Go to market',
-// 	'Make bed',
-// 	'Clean dishes',
-// 	'Walk the dog',
-// ];
-
-
 test.describe('Add todos', () => {
     
     test('Add a single todo item', async ({ page }) => {
