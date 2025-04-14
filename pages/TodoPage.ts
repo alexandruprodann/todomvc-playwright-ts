@@ -2,12 +2,21 @@ import { BasePage } from './BasePage';
 
 export class TodoPage extends BasePage {
 	// Elements
-	private todoInput = this.page.getByTestId('text-input');
-	private todoItemLabel = this.page.getByTestId('todo-item-label');
+    private todoInputField() {
+        return this.page.getByTestId('text-input');
+    }
+
+    private todoItemLabel() {
+        return this.page.getByTestId('todo-item-label');
+    }
+
+    public todoItemLabelByText(text: string) {
+        return this.todoItemLabel().filter({ hasText: text });
+    }
 
 	// Actions
 	async addTodo(todo: string) {
-		await this.todoInput.fill(todo);
+		await this.todoInputField().fill(todo);
 		await this.page.keyboard.press('Enter');
 	}
 }
