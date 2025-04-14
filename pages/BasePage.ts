@@ -7,7 +7,4 @@ export class BasePage {
 		this.page = page;
 	}
 
-	async navigateTo(url: string) {
-		await this.page.goto(url);
-	}
 }
