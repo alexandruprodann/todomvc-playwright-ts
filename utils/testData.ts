@@ -3,4 +3,5 @@ export const TODO_ITEMS = [
 	'Make bed',
 	'Clean dishes',
 	'Walk the dog',
+    'Clean the house',
 ] as const;

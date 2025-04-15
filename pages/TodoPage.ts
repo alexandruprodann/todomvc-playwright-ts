@@ -6,7 +6,7 @@ export class TodoPage extends BasePage {
         return this.page.getByTestId('text-input');
     }
 
-    private todoItemLabel() {
+    public todoItemLabel() {
         return this.page.getByTestId('todo-item-label');
     }
 
