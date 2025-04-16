@@ -8,6 +8,7 @@ This project automates end-to-end tests for the [TodoMVC React](https://todomvc.
 
 - **tests/**
   - `add-todo.spec.ts` – Tests for adding todo items.
+  - `complete-todo.spec.ts` – Tests for marking/unmarking todos as complete.
 
 - **pages/**
   - `BasePage.ts` – Contains shared page functionality.
@@ -15,7 +16,6 @@ This project automates end-to-end tests for the [TodoMVC React](https://todomvc.
 
 - **utils/**
   - `testData.ts` – Reusable constants and data used across tests (e.g., `TODO_ITEMS`).
-  - `complete-todo.spec.ts` – Tests for marking/unmarking todos as complete.
 
 - **playwright.config.ts** – Configuration file for Playwright setup.
 ---
