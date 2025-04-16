@@ -2,7 +2,9 @@
   "name": "todomvc-playwright-ts",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "playwright:smoke": "npx playwright test --grep @smoke"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
