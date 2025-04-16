@@ -7,7 +7,7 @@ test.describe('Tests for adding todos', () => {
     let randomIndex: number = Math.floor(Math.random() * TODO_ITEMS.length);
  
 	test.beforeEach(async ({ page }) => {
-		await page.goto('https://todomvc.com/examples/react/dist/');
+		await page.goto('');
 		todoPage = new TodoPage(page);
 	});
 

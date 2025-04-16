@@ -8,7 +8,7 @@ test.describe('Tests for marking todos complete/incomplete', () => {
     let completed: string = 'completed';
  
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://todomvc.com/examples/react/dist/');
+        await page.goto('');
         todoPage = new TodoPage(page);
 
         for (const todoItem of TODO_ITEMS) {
