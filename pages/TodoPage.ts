@@ -6,6 +6,10 @@ export class TodoPage extends BasePage {
 		return this.page.getByTestId('text-input');
 	}
 
+    private todoInputFieldByValue(value: string) {
+        return this.page.locator(`input[value='${value}']`)
+    }
+
 	private todoItem() {
 		return this.page.getByTestId('todo-item');
 	}
@@ -49,6 +53,12 @@ export class TodoPage extends BasePage {
 			todoItemCheckbox.click();
 		} 
 	}
+
+    async editTodo(todo: string, newTodo: string) {
+        await this.todoItemLabelByText(todo).dblclick();
+        await this.todoInputFieldByValue(todo).fill(newTodo);
+        await this.page.keyboard.press('Enter');
+    }
 
     async uncheckTodo(todo: string) {
         const todoItemCheckbox = this.todoItemByText(todo).locator(
