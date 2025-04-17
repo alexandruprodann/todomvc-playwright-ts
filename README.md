@@ -9,6 +9,7 @@ This project automates end-to-end tests for the [TodoMVC React](https://todomvc.
 - **tests/**
   - `add-todo.spec.ts` – Tests for adding todo items.
   - `complete-todo.spec.ts` – Tests for marking/unmarking todos as complete.
+  - `edit-todo.spec.ts` - Tests for editing todo text.
 
 - **pages/**
   - `BasePage.ts` – Contains shared page functionality.
