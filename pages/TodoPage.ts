@@ -10,6 +10,10 @@ export class TodoPage extends BasePage {
         return this.page.locator(`input[value='${value}']`)
     }
 
+	public todoInputFieldInItemList() {
+		return this.page.getByTestId('todo-list').getByTestId('text-input');
+	}
+
 	private todoItem() {
 		return this.page.getByTestId('todo-item');
 	}

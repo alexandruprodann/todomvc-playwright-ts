@@ -28,12 +28,15 @@ test.describe('Tests for editing todo text', () => {
     });
 
     test('should trim whitespace on edited text', async () => {
-        let newTodo: string = '    Whitespace Todo';
-        await todoPage.editTodo(randomTodo, newTodo);
-        await expect(todoPage.todoItemLabelByText(newTodo.trim())).toBeVisible();
+        let whitespaceTodo: string = '    Whitespace Todo';
+        await todoPage.editTodo(randomTodo, whitespaceTodo);
+        await expect(todoPage.todoItemLabelByText(whitespaceTodo.trim())).toBeVisible();
     });
 
-    test('should not save an empty edited text', async () => {
+    test('should not save an empty edited todo', async () => {
+        let emptyTodo: string = '    ';
+        await todoPage.editTodo(randomTodo, emptyTodo);
+        await expect(todoPage.todoInputFieldInItemList()).toBeVisible();
     });
 
 });
