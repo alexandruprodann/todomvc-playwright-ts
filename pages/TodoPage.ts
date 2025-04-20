@@ -42,6 +42,10 @@ export class TodoPage extends BasePage {
         return this.page.getByTestId('todo-list');
     }
 
+	private deleteButtonByTodo(todo: string) {
+		return this.todoItemByText(todo).getByTestId('todo-item-button');
+	}
+
 	// Actions
 	async addTodo(todo: string) {
 		await this.todoInputField().fill(todo);
@@ -79,4 +83,9 @@ export class TodoPage extends BasePage {
         const itemCount = parseInt(textContent.charAt(0));
         return itemCount;
     }
+
+	async deleteTodo(todo: string) {
+		await this.todoItemLabelByText(todo).hover();
+		await this.deleteButtonByTodo(todo).click();
+	}
 }
