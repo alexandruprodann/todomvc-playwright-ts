@@ -20,4 +20,11 @@ test.describe('Tests for editing todo text', () => {
         await expect(todoPage.todoItemByText(randomTodo)).not.toBeAttached();
     });
 
+    test('should delete multiple todos one by one', async () => {
+        for (const todoItem of TODO_ITEMS) {
+            await todoPage.deleteTodo(todoItem);
+            await expect(todoPage.todoItemByText(todoItem)).not.toBeAttached();
+        }
+    });
+
 });
