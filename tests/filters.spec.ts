@@ -4,6 +4,7 @@ import { TODO_ITEMS } from '../utils/testData';
 
 test.describe('Tests for editing todo text', () => {
     let todoPage: TodoPage;
+    let randomTodo: string = TODO_ITEMS[Math.floor(Math.random() * TODO_ITEMS.length)];
 
     enum Status {
         ALL = "All",
@@ -21,11 +22,16 @@ test.describe('Tests for editing todo text', () => {
     });
 
     test('should show all todos when "All" filter is selected', async () => {
-        todoPage.clickFilterBtn(Status.ALL);
+        await todoPage.clickFilterBtn(Status.ALL);
         for (const todoItem of TODO_ITEMS) {
             await expect(todoPage.todoItemByText(todoItem)).toBeVisible();
         }
     });
 
+    test.only('should show only active todos when "Active" filter is selected', async () => {
+        await todoPage.checkTodo(randomTodo);
+        await todoPage.clickFilterBtn(Status.ACTIVE)
+        await expect(todoPage.todoItemByText(randomTodo)).not.toBeVisible();
+    })
 
 });

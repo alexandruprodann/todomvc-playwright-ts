@@ -63,7 +63,7 @@ export class TodoPage extends BasePage {
 		);
 
 		if (!(await todoItemCheckbox.isChecked())) {
-			todoItemCheckbox.click();
+			await todoItemCheckbox.click();
 		} 
 	}
 
