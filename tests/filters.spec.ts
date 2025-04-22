@@ -28,7 +28,7 @@ test.describe('Tests for editing todo text', () => {
         }
     });
 
-    test.only('should show only active todos when "Active" filter is selected', async () => {
+    test('should show only active todos when "Active" filter is selected', async () => {
         await todoPage.checkTodo(randomTodo);
         await todoPage.clickFilterBtn(Status.ACTIVE)
         await expect(todoPage.todoItemByText(randomTodo)).not.toBeVisible();
