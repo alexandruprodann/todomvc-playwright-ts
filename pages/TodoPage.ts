@@ -46,6 +46,11 @@ export class TodoPage extends BasePage {
 		return this.todoItemByText(todo).getByTestId('todo-item-button');
 	}
 
+    private filterBtn(buttonName: string) {
+        return this.page.getByRole('link', { name: buttonName })
+    }
+
+
 	// Actions
 	async addTodo(todo: string) {
 		await this.todoInputField().fill(todo);
@@ -88,4 +93,8 @@ export class TodoPage extends BasePage {
 		await this.todoItemLabelByText(todo).hover();
 		await this.deleteButtonByTodo(todo).click();
 	}
+
+    async clickFilterBtn(buttonName: string) {
+        await this.filterBtn(buttonName).click();
+    }
 }
