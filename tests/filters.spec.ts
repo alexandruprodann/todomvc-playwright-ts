@@ -33,5 +33,10 @@ test.describe('Tests for filtering todos', () => {
         await todoPage.clickFilterBtn(Status.ACTIVE)
         await expect(todoPage.todoItemByText(randomTodo)).not.toBeVisible();
     })
-
+    
+    test.only('should show only completed todos when "Completed" filter is selected', async () => {
+        await todoPage.checkTodo(randomTodo);
+        await todoPage.clickFilterBtn(Status.COMPLETED)
+        await expect(todoPage.todoItemByText(randomTodo)).toBeVisible();
+    })
 });
