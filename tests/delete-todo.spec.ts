@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { TodoPage } from '../pages/TodoPage';
 import { TODO_ITEMS } from '../utils/testData';
 
-test.describe('Tests for editing todo text', () => {
+test.describe('Tests for deleting todos', () => {
     let todoPage: TodoPage;
     let randomTodo: string = TODO_ITEMS[Math.floor(Math.random() * TODO_ITEMS.length)];
  
