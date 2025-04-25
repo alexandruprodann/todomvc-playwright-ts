@@ -50,6 +50,10 @@ export class TodoPage extends BasePage {
         return this.page.getByRole('link', { name: buttonName })
     }
 
+    private clearCompletedBtn() {
+        return this.page.locator('.clear-completed')
+    }
+
 
 	// Actions
 	async addTodo(todo: string) {
@@ -96,5 +100,9 @@ export class TodoPage extends BasePage {
 
     async clickFilterBtn(buttonName: string) {
         await this.filterBtn(buttonName).click();
+    }
+
+    async clickClearCompletedBtn() {
+        await this.clearCompletedBtn().click();
     }
 }

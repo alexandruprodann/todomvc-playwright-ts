@@ -33,10 +33,10 @@ test.describe('Tests for editing todos', () => {
         await expect(todoPage.todoItemLabelByText(whitespaceTodo.trim())).toBeVisible();
     });
 
-    test('should not save an empty edited todo', async () => {
+    test('should delete an empty edited todo', async () => {
         let emptyTodo: string = '    ';
         await todoPage.editTodo(randomTodo, emptyTodo);
-        await expect(todoPage.todoInputFieldInItemList()).toBeVisible();
+        await expect(todoPage.todoItemByText(randomTodo)).not.toBeVisible();
     });
 
 });

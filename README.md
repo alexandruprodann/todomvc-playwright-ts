@@ -1,6 +1,6 @@
 # 💻 Playwright + TypeScript E2E Automation: TodoMVC App
 
-This project automates end-to-end tests for the [TodoMVC React](https://todomvc.com/examples/react/dist/) app using **Playwright**, **TypeScript**, and the **Page Object Model (POM)** design pattern.
+This project automates end-to-end tests for the [TodoMVC React-Redux](https://todomvc.com/examples/react-redux/dist/) app using **Playwright**, **TypeScript**, and the **Page Object Model (POM)** design pattern.
 
 ---
 
