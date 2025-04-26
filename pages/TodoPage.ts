@@ -50,7 +50,7 @@ export class TodoPage extends BasePage {
         return this.page.getByRole('link', { name: buttonName })
     }
 
-    private clearCompletedBtn() {
+    public clearCompletedBtn() {
         return this.page.locator('.clear-completed')
     }
 

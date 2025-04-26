@@ -21,4 +21,9 @@ test.describe('Tests for clearing completed todos', () => {
         await expect(todoPage.todoItemByText(randomTodo)).not.toBeVisible();
     });
 
+    test('should show the "Clear completed" button only when there are completed todos', async () => {
+        await expect(todoPage.clearCompletedBtn()).not.toBeVisible();
+        await todoPage.checkTodo(randomTodo);
+        await expect(todoPage.clearCompletedBtn()).toBeVisible();
+    })
 });
