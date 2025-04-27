@@ -26,4 +26,11 @@ test.describe('Tests for clearing completed todos', () => {
         await todoPage.checkTodo(randomTodo);
         await expect(todoPage.clearCompletedBtn()).toBeVisible();
     })
+
+    test('should hide the "Clear completed" button after clearing', async () => {
+        await todoPage.checkTodo(randomTodo);
+        await todoPage.clickClearCompletedBtn();
+        await expect(todoPage.clearCompletedBtn()).not.toBeVisible();
+    });
+
 });
