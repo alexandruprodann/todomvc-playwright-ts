@@ -8,8 +8,11 @@ This project automates end-to-end tests for the [TodoMVC React-Redux](https://to
 
 - **tests/**
   - `add-todo.spec.ts` – Tests for adding todo items.
+  - `clear-completed.spec.ts` – Tests for clearing completed items.
   - `complete-todo.spec.ts` – Tests for marking/unmarking todos as complete.
+  - `delete-todo.spec.ts` – Tests for deleting todo items.
   - `edit-todo.spec.ts` - Tests for editing todo text.
+  - `filters.spec.ts` – Tests for filtering All / Active / Completed todos.
 
 - **pages/**
   - `BasePage.ts` – Contains shared page functionality.
