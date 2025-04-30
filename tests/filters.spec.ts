@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { TodoPage } from '../pages/TodoPage';
 import { TODO_ITEMS } from '../utils/testData';
-import { getRandomTodoItem } from '../utils/todoUtils';
+import { getRandomTodoItem, setupTodos } from '../utils/todoUtils';
 
 test.describe('Tests for filtering todos', () => {
     let todoPage: TodoPage;
@@ -14,12 +14,7 @@ test.describe('Tests for filtering todos', () => {
     }      
  
     test.beforeEach(async ({ page }) => {
-        await page.goto('');
-        todoPage = new TodoPage(page);
-
-        for (const todoItem of TODO_ITEMS) {
-            await todoPage.addTodo(todoItem);
-        }
+        todoPage = await setupTodos(page);
     });
 
     test('should show all todos when "All" filter is selected', async () => {

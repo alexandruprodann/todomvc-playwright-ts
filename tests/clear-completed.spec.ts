@@ -1,19 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { TodoPage } from '../pages/TodoPage';
-import { TODO_ITEMS } from '../utils/testData';
-import { getRandomTodoItem } from '../utils/todoUtils';
+import { getRandomTodoItem, setupTodos } from '../utils/todoUtils';
 
 test.describe('Tests for clearing completed todos', () => {
     let todoPage: TodoPage;
     let randomTodo: string = getRandomTodoItem();
 
     test.beforeEach(async ({ page }) => {
-        await page.goto('');
-        todoPage = new TodoPage(page);
-
-        for (const todoItem of TODO_ITEMS) {
-            await todoPage.addTodo(todoItem);
-        }
+        todoPage = await setupTodos(page);
     });
 
     test('should remove only completed todos when "Clear completed" is clicked', async () => {
