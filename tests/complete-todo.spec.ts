@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { TodoPage } from '../pages/TodoPage';
 import { TODO_ITEMS } from '../utils/testData';
+import { getRandomTodoItem } from '../utils/todoUtils';
 
 test.describe('Tests for marking todos complete/incomplete', () => {
     let todoPage: TodoPage;
-    let randomTodo: string = TODO_ITEMS[Math.floor(Math.random() * TODO_ITEMS.length)];
-    let completed: string = 'completed';
+    let randomTodo: string = getRandomTodoItem();
  
     test.beforeEach(async ({ page }) => {
         await page.goto('');
