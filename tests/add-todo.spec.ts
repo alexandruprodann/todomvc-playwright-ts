@@ -5,7 +5,7 @@ import { getRandomTodoItem } from '../utils/todoUtils';
 
 test.describe('Tests for adding todos', () => {
 	let todoPage: TodoPage;
-    let randomTodo: string = getRandomTodoItem()
+    const randomTodo: string = getRandomTodoItem()
  
 	test.beforeEach(async ({ page }) => {
 		await page.goto('');
@@ -25,7 +25,7 @@ test.describe('Tests for adding todos', () => {
 	});
 
 	test('should trim whitespace from todo text', async () => {
-        let toDoItemWithWhitespace: string = '    ' + randomTodo
+        const toDoItemWithWhitespace: string = '    ' + randomTodo
 		await todoPage.addTodo(toDoItemWithWhitespace);
 		await expect(todoPage.todoItemLabelByText(randomTodo)).toBeVisible();
 	});

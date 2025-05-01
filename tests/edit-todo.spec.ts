@@ -4,14 +4,14 @@ import { getRandomTodoItem, setupTodos } from '../utils/todoUtils';
 
 test.describe('Tests for editing todos', () => {
     let todoPage: TodoPage;
-    let randomTodo: string = getRandomTodoItem();
+    const randomTodo: string = getRandomTodoItem();
  
     test.beforeEach(async ({ page }) => {
         todoPage = await setupTodos(page);
     });
 
     test('@smoke - should be able to edit a todo', async () => {
-        let newTodo: string = 'New Todo';
+        const newTodo: string = 'New Todo';
         await todoPage.editTodo(randomTodo, newTodo);
         await expect(todoPage.todoItemLabelByText(newTodo)).toBeVisible();
     });
@@ -23,13 +23,13 @@ test.describe('Tests for editing todos', () => {
     });
 
     test('should trim whitespace on edited text', async () => {
-        let whitespaceTodo: string = '    Whitespace Todo';
+        const whitespaceTodo: string = '    Whitespace Todo';
         await todoPage.editTodo(randomTodo, whitespaceTodo);
         await expect(todoPage.todoItemLabelByText(whitespaceTodo.trim())).toBeVisible();
     });
 
     test('should delete an empty edited todo', async () => {
-        let emptyTodo: string = '    ';
+        const emptyTodo: string = '    ';
         await todoPage.editTodo(randomTodo, emptyTodo);
         await expect(todoPage.todoItemByText(randomTodo)).not.toBeVisible();
     });

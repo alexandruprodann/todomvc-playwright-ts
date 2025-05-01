@@ -5,7 +5,7 @@ import { getRandomTodoItem, setupTodos } from '../utils/todoUtils';
 
 test.describe('Tests for filtering todos', () => {
     let todoPage: TodoPage;
-    let randomTodo: string = getRandomTodoItem();
+    const randomTodo: string = getRandomTodoItem();
 
     enum Status {
         ALL = "All",

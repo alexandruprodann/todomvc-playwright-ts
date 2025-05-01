@@ -4,7 +4,7 @@ import { getRandomTodoItem, setupTodos } from '../utils/todoUtils';
 
 test.describe('Tests for clearing completed todos', () => {
     let todoPage: TodoPage;
-    let randomTodo: string = getRandomTodoItem();
+    const randomTodo: string = getRandomTodoItem();
 
     test.beforeEach(async ({ page }) => {
         todoPage = await setupTodos(page);
