@@ -11,7 +11,7 @@ test.describe('Tests for deleting todos', () => {
         todoPage = await setupTodos(page);
     });
 
-    test('should delete a single todo item', async () => {
+    test('@smoke - should delete a single todo item', async () => {
         await todoPage.deleteTodo(randomTodo);
         await expect(todoPage.todoItemByText(randomTodo)).not.toBeAttached();
     });

@@ -10,7 +10,7 @@ test.describe('Tests for clearing completed todos', () => {
         todoPage = await setupTodos(page);
     });
 
-    test('should remove only completed todos when "Clear completed" is clicked', async () => {
+    test('@smoke - should remove only completed todos when "Clear completed" is clicked', async () => {
         await todoPage.checkTodo(randomTodo);
         await todoPage.clickClearCompletedBtn();
         await expect(todoPage.todoItemByText(randomTodo)).not.toBeVisible();

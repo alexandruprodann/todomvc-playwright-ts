@@ -17,7 +17,7 @@ test.describe('Tests for filtering todos', () => {
         todoPage = await setupTodos(page);
     });
 
-    test('should show all todos when "All" filter is selected', async () => {
+    test('@smoke - should show all todos when "All" filter is selected', async () => {
         await todoPage.clickFilterBtn(Status.ALL);
         for (const todoItem of TODO_ITEMS) {
             await expect(todoPage.todoItemByText(todoItem)).toBeVisible();

@@ -10,7 +10,7 @@ test.describe('Tests for editing todos', () => {
         todoPage = await setupTodos(page);
     });
 
-    test('should edit a todo and press Enter to save', async () => {
+    test('@smoke - should be able to edit a todo', async () => {
         let newTodo: string = 'New Todo';
         await todoPage.editTodo(randomTodo, newTodo);
         await expect(todoPage.todoItemLabelByText(newTodo)).toBeVisible();

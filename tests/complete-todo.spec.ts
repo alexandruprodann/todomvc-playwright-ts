@@ -11,7 +11,7 @@ test.describe('Tests for marking todos complete/incomplete', () => {
         todoPage = await setupTodos(page);
     });
 
-    test('should mark a single todo as completed @smoke', async () => {
+    test('@smoke - should mark a single todo as completed', async () => {
         await todoPage.checkTodo(randomTodo);
         await expect(todoPage.todoItemLabelByText(randomTodo)).toHaveCSS('text-decoration', /line-through/);
     });
@@ -23,7 +23,7 @@ test.describe('Tests for marking todos complete/incomplete', () => {
 		}
     });
 
-    test('should uncheck a completed todo @smoke', async () => {
+    test('@smoke - should uncheck a completed todo', async () => {
         await todoPage.checkTodo(randomTodo);
         await expect(todoPage.todoItemLabelByText(randomTodo)).toHaveCSS('text-decoration', /line-through/);
         await todoPage.uncheckTodo(randomTodo);

@@ -12,7 +12,7 @@ test.describe('Tests for adding todos', () => {
 		todoPage = new TodoPage(page);
 	});
 
-	test('should add a single todo item @smoke', async () => {
+	test('@smoke - should add a single todo item', async () => {
 		await todoPage.addTodo(randomTodo);
 		await expect(todoPage.todoItemLabelByText(randomTodo)).toBeVisible();
 	});
@@ -35,7 +35,7 @@ test.describe('Tests for adding todos', () => {
         await expect(todoPage.todoItemLabel()).not.toBeVisible();
     });
 
-	test('should not add an empty todo @smoke', async () => {
+	test('@smoke - should not add an empty todo', async () => {
 		await todoPage.addTodo('');
 		await expect(todoPage.todoItemLabel()).not.toBeVisible();
 	});
