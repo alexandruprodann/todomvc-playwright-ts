@@ -69,3 +69,10 @@ To run tests in headed mode, you can use:
 ```
 npx playwright test --headed
 ```
+
+### Running Smoke Tests
+
+To only run the smoke tests, you can use:
+```
+npm run playwright:smoke
+```
